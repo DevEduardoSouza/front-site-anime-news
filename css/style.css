@@ -3,6 +3,7 @@
 :root{
     --colorMain: #212529;
     --colorSecondary: #ffffff;
+    --colorThird: #343434;
     --fontMain: 'Inter', sans-serif;
     --fontSecondary: 'Lexend Deca', sans-serif;
 }
@@ -13,25 +14,91 @@
 }
 body{
     background-color: var(--colorMain);
+    font-family: var(--fontSecondary);
 }
-
 /* HEADER */
 header{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70px;
-    background-color: #ffffff;
+    border-bottom: 1px solid #343434;
 }
 .conteiner{
     display: flex;
     justify-content: space-between;
     width: 1325px;
-    border: 1px solid red;
+}
+.navbar{
+    align-items: center;
 }
 .menu-navbar ul li{
     list-style: none;
     display: inline;
+}
+.logo-navbar img{
+    width: 150px;
+}
+ul li a{
+    color: var(--colorSecondary);
+    text-decoration: none;
+    padding: 10px;
+}
+ul li a:hover{
+   background-color: var(--colorThird);
+}
+.menu-search form input, button{
+    height: 30px;
+    border: none;
+}
+.menu-search form input{
+    background-color: var(--colorThird);
+    padding-left: 10px;
+    outline: none;
+    color: var(--colorSecondary);
+}
+.menu-search form button{
+    background-color: var(--colorThird);
+    margin-left: -5px;
+    padding: 5px;
+    cursor: pointer;
+}
+.menu-social-login{
+    display: flex;
+    align-items: center;
+}
+.menu-social-login div{
+    padding-left: 25px;
+    font-size: 20px;
+}
+.menu-social-login button{
+    background-color: var(--colorThird);
+    font-family: var(--fontSecondary);   
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.menu-social-login button a{
+    color: #ffffff79;
+    text-decoration: none;
+}
+.menu-social-login button a:hover{
+    color: white;
+}
+.menu-social-login button:hover{
+    background-color: #ffffff1c;
+}
+.icone-social a{
+    color: black;
+}
+.icone-social{
+    cursor: pointer;
+}
+.icone-social :hover{
+    color: white;
+    transition: .2s;
 }
 
 /* END HEADER */
