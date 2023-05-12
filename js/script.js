@@ -20,8 +20,6 @@ let newsSlider = [
     {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg', category:'TESTE', title:'Teste 4', author:'Eduardo souza', totalComments: 20}
 ]
 
-console.log(newsSlider[0].title);
-
 var cont = 0;
 var img = document.querySelector('.main-news img');
 modificar(0);
