@@ -4,6 +4,7 @@
     --colorMain: #212529;
     --colorSecondary: #ffffff;
     --colorThird: #343434;
+    --colorBgBtn: #fd973d;
     --fontMain: 'Inter', sans-serif;
     --fontSecondary: 'Lexend Deca', sans-serif;
 }
@@ -39,13 +40,13 @@ header{
 .logo-navbar img{
     width: 150px;
 }
-ul li a{
+.menu-navbar ul li a{
     color: var(--colorSecondary);
     text-decoration: none;
     padding: 10px;
 }
-ul li a:hover{
-   background-color: var(--colorThird);
+.menu-navbar ul li a:hover{
+   color: var(--colorBgBtn);
 }
 
 /* Search */
@@ -81,23 +82,21 @@ ul li a:hover{
     font-size: 20px;
 }
 .menu-social-login button{
-    background-color: var(--colorThird);
+    background-color: var(--colorBgBtn);
     font-family: var(--fontSecondary);   
-    font-size: 15px;
-    padding: 5px;
+    font-size: 1rem;
+    padding: .4rem .8rem;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    opacity: .8;
 }
 .menu-social-login button a{
-    color: #ffffff79;
+    color: #fff;
     text-decoration: none;
 }
-.menu-social-login button a:hover{
-    color: white;
-}
 .menu-social-login button:hover{
-    background-color: #ffffff1c;
+  opacity: 1;
 }
 .icone-social a{
     color: black;
