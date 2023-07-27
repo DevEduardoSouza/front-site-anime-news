@@ -200,28 +200,28 @@ header {
     font-weight: 400;
 }
 
-.btns {
+.btn-carousel {
     width: 20px;
     margin: 10px;
     height: 80px;
     cursor: pointer;
     border: none;
-    display: none;
+    /* display: none; */
     background-color: var(--colorThird);
     color: white;
 }
 
-.btns:hover {
+.btn-carousel:hover {
     background-color: rgba(224, 217, 217, 0.514);
 }
 
-#ant,
-#prox {
+#btn-prev,
+#btn-next {
     position: absolute;
     top: 35%;
 }
 
-#prox {
+#btn-next {
     right: 20px;
 }
 
@@ -285,4 +285,7 @@ header {
     width: 100%;
 }
 
+.hide{
+    display: none;
+}
 /*  END LATEST NEWS */
