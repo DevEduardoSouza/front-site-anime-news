@@ -1,4 +1,4 @@
-// Seleção
+//---------------------{ Seleção }---------------------
 const imgCarrosel = document.querySelector('.main-news')
 const btnPrev = document.querySelector("#btn-prev");
 const btnNext = document.querySelector("#btn-next");
@@ -57,6 +57,14 @@ const createNews = (news) => {
     descriptionNews.classList.add('preview-description');
     descriptionNews.innerText = `${news.descriptionNews}`;
     divNews.appendChild(descriptionNews);
+
+    const btnReadMore = document.createElement('form');
+    btnReadMore.innerHTML = `
+        <button type="submit" class="btn-read-more news-btn">
+        Ler mais
+        </button>
+    `;
+    divNews.appendChild(btnReadMore)
     
     const divInfoPost = document.createElement('div');
     divInfoPost.classList.add('infos-post');
@@ -69,6 +77,8 @@ const createNews = (news) => {
         <span>${news.author}</span>
     `;
     divInfoPost.appendChild(authorNews);
+
+    
     
     const divStatisticPostNews = document.createElement('div');
     divStatisticPostNews.classList.add('statistic-post');
@@ -88,7 +98,9 @@ const createNews = (news) => {
     `; 
     divInfoPost.appendChild(divStatisticPostNews);
     
+   
     
+   
     divNews.appendChild(divInfoPost);
     newLatestContainer.appendChild(divNews);
 };
@@ -99,7 +111,7 @@ latestNews.map((news)=>{
 })
 
 
-// Eventos
+//---------------------{ Eventos }---------------------
 imgCarrosel.addEventListener('mouseover', ()=>{
     toggleMouse();
 });
