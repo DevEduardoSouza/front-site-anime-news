@@ -5,10 +5,10 @@ const btnNext = document.querySelector("#btn-next");
 const btnsCarousel = document.querySelectorAll('.btn-carousel');
 
 const news = [
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp', category:'TESTE', title:'Top 10 animes mais asistido', author:'Eduardo souza', totalComments: 20},
-    {img:'https://s2.glbimg.com/8i45kDFdGGycvikrJ6Ew_t87zZo=/0x0:1024x572/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/t/q/Q3lwNDREeJkBs6XSHVIQ/attack.jpg', category:'TESTE', title:'Teste 2', author:'Eduardo souza', totalComments: 20},
-    {img:'https://image.api.playstation.com/vulcan/img/cfn/11307Xv0hRtrEfI1d3U5sooTOMfEP7ZN3xCekypTL0vWCL3wW4yfYLnqXhguZioi5NJoSvcFWO1NMfY_1nA5GtdTlXcCSpfI.png', category:'TESTE', title:'Teste 3', author:'Eduardo souza', totalComments: 20},
-    {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg', category:'TESTE', title:'Teste 4', author:'Eduardo souza', totalComments: 20}
+    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp', category:'anime', title:'Top 10 animes mais asistido', author:'Eduardo souza', totalComments: 20, id:1},
+    {img:'https://s2.glbimg.com/8i45kDFdGGycvikrJ6Ew_t87zZo=/0x0:1024x572/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/t/q/Q3lwNDREeJkBs6XSHVIQ/attack.jpg', category:'review', title:'Teste 2', author:'Eduardo souza', totalComments: 20, id:2},
+    {img:'https://image.api.playstation.com/vulcan/img/cfn/11307Xv0hRtrEfI1d3U5sooTOMfEP7ZN3xCekypTL0vWCL3wW4yfYLnqXhguZioi5NJoSvcFWO1NMfY_1nA5GtdTlXcCSpfI.png', category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, id:3},
+    {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg', category:'jogos', title:'Teste 4', author:'Eduardo souza', totalComments: 20, id:4}
 ];
 
 
@@ -55,6 +55,7 @@ function modificar(cont) {
     newMain.querySelector(".title").innerText = news[cont].title;
     newMain.querySelector(".author").innerText = "Por "+ news[cont].author;
     newMain.querySelector(".totalComments").innerText = news[cont].totalComments + " Comentários";
+    newMain.querySelector('.link-post').setAttribute('href', `categoria/${news[cont].category}/post.html?id=${news[cont].id}`)
 }
 
 btnNext.addEventListener('click', prox);

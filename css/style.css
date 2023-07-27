@@ -224,12 +224,18 @@ header {
 #btn-next {
     right: 20px;
 }
-
-.main-news .new {
+/* .main-news img{
+    opacity: 1;
+    transition: .7s;
+}
+.main-news img:hover{
+    opacity: .5;
+} */
+.main-news  .new {
     padding: 50px 50px;
 }
 
-.main-news .new .title {
+.main-news  .new .title {
     font-size: 25px;
 }
 
