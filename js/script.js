@@ -13,7 +13,7 @@ const news = [
 ];
 
 const latestNews = [
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:10},
+    {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:10},
     {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'anime', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:11},
     {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'jogos', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:12},
     {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'review', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:13},
@@ -91,14 +91,13 @@ const createNews = (news) => {
     
     divNews.appendChild(divInfoPost);
     newLatestContainer.appendChild(divNews);
-
-    console.log(divNews);
 };
 
 // 
 latestNews.map((news)=>{
     createNews(news);
 })
+
 
 // Eventos
 imgCarrosel.addEventListener('mouseover', ()=>{
