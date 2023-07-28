@@ -71,6 +71,66 @@ const animeNewsData = [
         { id: 112, author: 'NarutoGeek', content: 'Loved learning about the voice acting process!'}
       ]
     },
+    {
+        id: 5,
+        title: 'New Anime "Beyond the Stars" Premieres on October 1st',
+        description: 'Exciting news for all anime fans! A brand new anime titled "Beyond the Stars" will make its debut on October 1st. Get ready for an intergalactic adventure!',
+        category: 'Anime News',
+        author: 'AnimeEnthusiast2023',
+        date: 'September 20, 2023',
+        imageUrl: 'https://psverso.com.br/wp-content/uploads/2023/05/Haruka-Beyond-the-Stars.jpg',
+        views: 3000,
+        comments: [
+          { id: 113, author: 'GalacticExplorer', content: 'Counting down the days!'},
+          { id: 114, author: 'SpaceOtaku', content: 'This looks out of this world!'},
+          { id: 115, author: 'StarGazer', content: 'Hope it lives up to the hype!'}
+        ]
+      },
+      {
+        id: 6,
+        title: 'AnimeCon 2024: Save the Date!',
+        description: 'Mark your calendars for AnimeCon 2024! The biggest anime convention of the year is coming on February 15-18. Get ready for cosplays, panels, and amazing guests!',
+        category: 'Anime Events',
+        author: 'AnimeConOrg',
+        date: 'October 5, 2023',
+        imageUrl: 'https://jotaku.net/wp-content/uploads/2021/01/https___blogs-images.forbes.com_laurenorsini_files_2015_07_anime_expo.jpg',
+        views: 4000,
+        comments: [
+          { id: 116, author: 'CosplayFanatic', content: 'Can\'t wait to show off my new cosplay!'},
+          { id: 117, author: 'AnimePanelist', content: 'Excited to present my panel at the con!'},
+          { id: 118, author: 'GuestSpotlight', content: 'Looking forward to meeting the special guests!'}
+        ]
+      },
+      {
+        id: 7,
+        title: 'Top 10 Must-Watch Anime of 2023',
+        description: 'Check out our list of the top 10 anime series you shouldn\'t miss in 2023. From action to romance, we\'ve got you covered with the best shows of the year!',
+        category: 'Anime Recommendations',
+        author: 'AnimeFanaticsReview',
+        date: 'November 30, 2023',
+        imageUrl: 'https://animecorner.me/wp-content/uploads/2023/05/top-best-upcoming-summer-2023-anime-releases.png',
+        views: 2800,
+        comments: [
+          { id: 119, author: 'AnimeLover86', content: 'I\'ve seen most of these, and they\'re amazing!'},
+          { id: 120, author: 'NewbieAnimeFan', content: 'Adding these to my watchlist right away!'},
+          { id: 121, author: 'AnimeCriticX', content: 'Can\'t believe my favorite show made the list!'}
+        ]
+      },
+      {
+        id: 8,
+        title: 'Behind the Scenes: "The Making of Anime Music"',
+        description: 'Discover the secrets behind creating captivating anime music. We interviewed renowned composers and explored the creative process that brings anime soundtracks to life.',
+        category: 'Special Features',
+        author: 'MusicMaestro',
+        date: 'December 20, 2023',
+        imageUrl: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/11/music-anime.jpg',
+        views: 1800,
+        comments: [
+          { id: 122, author: 'MusicLover123', content: 'Anime music is so underrated!'},
+          { id: 123, author: 'ComposerEnthusiast', content: 'Inspiring to see the composers at work!'},
+          { id: 124, author: 'AnimeSoundtrackFan', content: 'I\'m a big fan of anime OSTs!'}
+        ]
+      },
   ];
   
   

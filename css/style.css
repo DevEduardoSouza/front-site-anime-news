@@ -264,6 +264,7 @@ header {
 .lat_news {
     margin: auto;
     height: auto;
+    margin-bottom: 10rem;
 }
 
 .conteiner_news {
@@ -280,7 +281,7 @@ header {
 .content_latest_news {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
 .info_latest_news {
@@ -347,11 +348,12 @@ header {
 }
 .container-highlight{
     /* width: 100%; */
-    min-height: 1500px;
+    height: auto;
     margin: auto;
     background-color: var(--colorThird) ;
     /* padding: 5px; */
     padding: 10px;   
+    padding-bottom: 150px;
 }
 .container-highlight h2 {
     margin-bottom: 1rem;
@@ -359,9 +361,10 @@ header {
     font-size: 1.2rem;
 }
 .container-highlight .banner-commercial{
-    width: 100%;
+    width: 90%;
     background-color: #fd973d   ;
-    height: 200px;
+    height: 175px;
+    margin: auto;
     margin-bottom: 50px;
 }
 .container-highlight .banner-commercial img{
@@ -409,3 +412,79 @@ header {
 .hide{
     display: none;
 }
+
+/* Footer */
+
+.conteiner-footer{
+    border-top: 1px solid #fff;
+    margin: auto;
+    width: 100%;
+    background-color: var(--colorMain);
+}
+.content-footer{
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    padding: 2.5rem;
+    gap: 20px;
+}
+.info-site{
+    width: 55%;
+}
+.info-site p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin: 10px;
+}
+#logo-fotter{
+    width: 80px;
+}
+.about-site { 
+    width: 45%;
+    display: flex;
+    gap: 5rem;
+}
+ .title-about{
+     color: #fff;
+    }
+.about-infos-site ul, li{
+    list-style: none;
+}
+.about-infos-site li{
+    padding: 10px 0;
+
+}
+.about-infos-site li a{
+    color: #000;
+}
+.about-infos-site li a:hover{
+    color: var(--colorBgBtn);
+}
+
+.infos-social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-top: 1px solid #fff;
+    color: #fdfdfd;
+    font-weight: bold;
+    
+}
+.icones-social-media{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+.icones-social-media i {
+    font-size: 1rem;
+    color: var(--colorBgBtn);
+}
+.icones-social-media i:hover{
+    color: #b16727;
+}
+/*END Footer */
