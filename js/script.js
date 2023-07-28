@@ -6,20 +6,70 @@ const btnsCarousel = document.querySelectorAll('.btn-carousel');
 const newLatestContainer = document.querySelector('.content_latest_news');
 const listNewsHighlight = document.querySelector('.list-news-highlight');
 
-const news = [
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp', category:'anime', title:'Top 10 animes mais asistido', author:'Eduardo souza', totalComments: 20, id:1},
-    {img:'https://s2.glbimg.com/8i45kDFdGGycvikrJ6Ew_t87zZo=/0x0:1024x572/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/t/q/Q3lwNDREeJkBs6XSHVIQ/attack.jpg', category:'review', title:'Teste 2', author:'Eduardo souza', totalComments: 20, id:2},
-    {img:'https://image.api.playstation.com/vulcan/img/cfn/11307Xv0hRtrEfI1d3U5sooTOMfEP7ZN3xCekypTL0vWCL3wW4yfYLnqXhguZioi5NJoSvcFWO1NMfY_1nA5GtdTlXcCSpfI.png', category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, id:3},
-    {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg', category:'jogos', title:'Teste 4', author:'Eduardo souza', totalComments: 20, id:4}
-];
-
-const latestNews = [
-    {img:'https://s.aficionados.com.br/imagens/saitama-na-lua-aficionados.jpg',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:10},
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'anime', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:11},
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'jogos', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:12},
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'review', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:13},
-    {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp',descriptionNews:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis est dolores provident odit nostrum. Deserunt corporis molestiae deleniti, amet minus earum minima ipsum modi architecto quod illum tempore voluptas? Exercitationem.' , category:'manga', title:'Teste 3', author:'Eduardo souza', totalComments: 20, totalViews:50, date:'10/10/2010', id:14},
-];
+const animeNewsData = [
+    {
+      id: 1,
+      title: 'New Season of "My Hero Academia" Announced',
+      description: 'Exciting news for fans of "My Hero Academia" as the anime series has been confirmed to get a new season. Get ready for more action and heroism!',
+      category: 'Anime News',
+      author: 'AnimeFan123',
+      date: 'July 28, 2023',
+      imageUrl: 'https://example.com/my_hero_academia_new_season.jpg',
+      views: 1500,
+      comments: [
+        { id: 101, author: 'SuperHero99', content: 'Can\'t wait for the new season!'},
+        { id: 102, author: 'FanGirl22', content: 'OMG, best news ever!!!'},
+        { id: 103, author: 'AnimeAddict', content: 'My Hero Academia is life <3'}
+      ]
+    },
+    {
+      id: 2,
+      title: 'Special Event: "Naruto" 20th Anniversary Celebration',
+      description: 'Join us in celebrating the 20th anniversary of the beloved anime "Naruto"! We have exciting events, merchandise, and surprises for all Naruto fans.',
+      category: 'Anime Events',
+      author: 'NarutoFan2000',
+      date: 'September 10, 2023',
+      imageUrl: 'https://example.com/naruto_anniversary.jpg',
+      views: 2500,
+      comments: [
+        { id: 104, author: 'HiddenLeafNinja', content: 'Can\'t believe it\'s been 20 years already!'},
+        { id: 105, author: 'SharinganMaster', content: 'I\'ll be there for sure!'},
+        { id: 106, author: 'RamenLover', content: 'I hope they serve ramen at the event!'}
+      ]
+    },
+    {
+      id: 3,
+      title: 'New Anime Film: "The Legend of The Dragon Swordsman"',
+      description: 'Prepare for an epic adventure with "The Legend of The Dragon Swordsman" movie. Join the protagonist as he embarks on a quest to save the mystical land from darkness.',
+      category: 'Anime Movies',
+      author: 'CineAnimeGeek',
+      date: 'November 5, 2023',
+      imageUrl: 'https://example.com/dragon_swordsman_movie.jpg',
+      views: 1800,
+      comments: [
+        { id: 107, author: 'EpicQuester', content: 'This movie looks amazing!'},
+        { id: 108, author: 'FantasyWatcher', content: 'I\'m excited for the magical creatures!'},
+        { id: 109, author: 'AnimeCritic', content: 'Hoping for a gripping storyline!'}
+      ]
+    },
+    {
+      id: 4,
+      title: 'Interview with Voice Actor: Aya Suzuki (Voice of Sakura)',
+      description: 'We had a chance to sit down with Aya Suzuki, the talented voice behind Sakura in "Naruto". She shares her experiences and feelings about the iconic character.',
+      category: 'Interviews',
+      author: 'VoiceActorInsider',
+      date: 'December 15, 2023',
+      imageUrl: 'https://example.com/aya_suzuki_interview.jpg',
+      views: 1200,
+      comments: [
+        { id: 110, author: 'SakuraFan101', content: 'Sakura is my favorite character!'},
+        { id: 111, author: 'VoiceActorEnthusiast', content: 'Aya Suzuki is so talented!'},
+        { id: 112, author: 'NarutoGeek', content: 'Loved learning about the voice acting process!'}
+      ]
+    },
+  ];
+  
+  
 
 
 
@@ -45,7 +95,7 @@ const createNews = (news) => {
 
     const imgNews = document.createElement('img');
     imgNews.classList.add('img-post');
-    imgNews.setAttribute('src', `${news.img}`);
+    imgNews.setAttribute('src', `${news.imageUrl}`);
     imgNews.setAttribute('alt', `Foto: ${news.title}`);
     divNews.appendChild(imgNews);
 
@@ -54,10 +104,10 @@ const createNews = (news) => {
     titleNews.innerText = `${news.title}`;
     divNews.appendChild(titleNews);
 
-    const descriptionNews = document.createElement('span');
-    descriptionNews.classList.add('preview-description');
-    descriptionNews.innerText = `${news.descriptionNews}`;
-    divNews.appendChild(descriptionNews);
+    const description = document.createElement('span');
+    description.classList.add('preview-description');
+    description.innerText = `${news.description}`;
+    divNews.appendChild(description);
 
     const btnReadMore = document.createElement('form');
     btnReadMore.innerHTML = `
@@ -86,11 +136,11 @@ const createNews = (news) => {
     divStatisticPostNews.innerHTML = `
     <span class="total-comments">
         <i class="fa fa-comment" aria-hidden="true"></i>
-        <span class="value">${news.totalComments}</span>
+        <span class="value">${news.comments.length}</span>
     </span>
     <span class="total-views">
         <i class="fa fa-eye" aria-hidden="true"></i>
-        <span class="value">${news.totalViews}</span>
+        <span class="value">${news.views}</span>
     </span>
     <span class="post-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -107,7 +157,7 @@ const createNews = (news) => {
 };
 
 // 
-latestNews.map((news)=>{
+animeNewsData.map((news)=>{
     createNews(news);
 })
 
@@ -134,7 +184,7 @@ const createHighLightNews = (news) =>{
     listNewsHighlight.appendChild(divNewsHighligh);
 }
 
-latestNews.map((news)=>{
+animeNewsData.map((news)=>{
     createHighLightNews(news);
 })
 
@@ -169,12 +219,12 @@ function prox() {
 function modificar(cont) {
     let newMain = document.querySelector(".main-news");
 
-    newMain.querySelector("img").setAttribute('src', news[cont].img);
-    newMain.querySelector(".category").innerText = news[cont].category;
-    newMain.querySelector(".title").innerText = news[cont].title;
-    newMain.querySelector(".author").innerText = "Por "+ news[cont].author;
-    newMain.querySelector(".totalComments").innerText = news[cont].totalComments + " Comentários";
-    newMain.querySelector('.link-post').setAttribute('href', `categoria/${news[cont].category}/post.html?id=${news[cont].id}`)
+    newMain.querySelector("img").setAttribute('src', animeNewsData[cont].imageUrl);
+    newMain.querySelector(".category").innerText = animeNewsData[cont].category;
+    newMain.querySelector(".title").innerText = animeNewsData[cont].title;
+    newMain.querySelector(".author").innerText = "Por "+ animeNewsData[cont].author;
+    newMain.querySelector(".totalComments").innerText = animeNewsData[cont].totalComments + " Comentários";
+    newMain.querySelector('.link-post').setAttribute('href', `categoria/${animeNewsData[cont].category}/post.html?id=${animeNewsData[cont].id}`)
 }
 
 btnNext.addEventListener('click', prox);
