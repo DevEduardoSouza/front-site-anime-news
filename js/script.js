@@ -4,6 +4,7 @@ const btnPrev = document.querySelector("#btn-prev");
 const btnNext = document.querySelector("#btn-next");
 const btnsCarousel = document.querySelectorAll('.btn-carousel');
 const newLatestContainer = document.querySelector('.content_latest_news');
+const listNewsHighlight = document.querySelector('.list-news-highlight');
 
 const news = [
     {img:'https://i0.wp.com/viciados.net/wp-content/uploads/2022/11/Naruto-Shippuden-Boruto-2023.webp', category:'anime', title:'Top 10 animes mais asistido', author:'Eduardo souza', totalComments: 20, id:1},
@@ -108,6 +109,33 @@ const createNews = (news) => {
 // 
 latestNews.map((news)=>{
     createNews(news);
+})
+
+// Criar estrutura das news highlight
+const createHighLightNews = (news) =>{
+    const divNewsHighligh = document.createElement('div');
+    divNewsHighligh.classList.add('news-highlight');
+
+    const titleNewsHighligh = document.createElement('span');
+    titleNewsHighligh.classList.add('title-news-highlight');
+    titleNewsHighligh.innerText = news.title;
+    divNewsHighligh.appendChild(titleNewsHighligh);
+
+    const formNews = document.createElement('form');
+    formNews.innerHTML = `
+    <form>
+        <button type="submit" class="btn-read-more">
+            Ler mais
+        </button>
+    </form>
+    `
+    divNewsHighligh.appendChild(formNews);
+
+    listNewsHighlight.appendChild(divNewsHighligh);
+}
+
+latestNews.map((news)=>{
+    createHighLightNews(news);
 })
 
 
