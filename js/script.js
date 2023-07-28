@@ -6,6 +6,10 @@ const btnsCarousel = document.querySelectorAll('.btn-carousel');
 const newLatestContainer = document.querySelector('.content_latest_news');
 const listNewsHighlight = document.querySelector('.list-news-highlight');
 
+let currentIndex = 0;
+
+
+
 const animeNewsData = [
     {
       id: 1,
@@ -14,7 +18,7 @@ const animeNewsData = [
       category: 'Anime News',
       author: 'AnimeFan123',
       date: 'July 28, 2023',
-      imageUrl: 'https://example.com/my_hero_academia_new_season.jpg',
+      imageUrl: 'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/my-hero-academia-season-7-image.jpg',
       views: 1500,
       comments: [
         { id: 101, author: 'SuperHero99', content: 'Can\'t wait for the new season!'},
@@ -29,7 +33,7 @@ const animeNewsData = [
       category: 'Anime Events',
       author: 'NarutoFan2000',
       date: 'September 10, 2023',
-      imageUrl: 'https://example.com/naruto_anniversary.jpg',
+      imageUrl: 'https://naruto-official.com/common/ogp/NTOS_OG-20th.png',
       views: 2500,
       comments: [
         { id: 104, author: 'HiddenLeafNinja', content: 'Can\'t believe it\'s been 20 years already!'},
@@ -44,7 +48,7 @@ const animeNewsData = [
       category: 'Anime Movies',
       author: 'CineAnimeGeek',
       date: 'November 5, 2023',
-      imageUrl: 'https://example.com/dragon_swordsman_movie.jpg',
+      imageUrl: 'https://pic1.iqiyipic.com/image/20200928/2a/50/v_153455882_m_601_zh-CN_480_270.jpg',
       views: 1800,
       comments: [
         { id: 107, author: 'EpicQuester', content: 'This movie looks amazing!'},
@@ -59,7 +63,7 @@ const animeNewsData = [
       category: 'Interviews',
       author: 'VoiceActorInsider',
       date: 'December 15, 2023',
-      imageUrl: 'https://example.com/aya_suzuki_interview.jpg',
+      imageUrl: 'https://criticalhits.com.br/wp-content/uploads/2022/02/signo-sakura-naruto.jpg',
       views: 1200,
       comments: [
         { id: 110, author: 'SakuraFan101', content: 'Sakura is my favorite character!'},
@@ -189,43 +193,49 @@ animeNewsData.map((news)=>{
 })
 
 
-//---------------------{ Eventos }---------------------
-imgCarrosel.addEventListener('mouseover', ()=>{
-    toggleMouse();
+// 
+btnNext.addEventListener('click', ()=>{
+
+    if(currentIndex == animeNewsData.length - 1)
+        currentIndex = 0;
+    else
+        currentIndex++;
+    
+    upadateNewsCarrousel();
 });
-imgCarrosel.addEventListener("mouseout", ()=>{
-    toggleMouse();
-});
-
-
-
-
-var cont = 0;
-var img = document.querySelector('.main-news img');
-modificar(0);
 
 btnPrev.addEventListener('click', ()=>{
-    if(cont > 0)
-        cont--;
-    modificar(cont);
+    if(currentIndex == 0){
+        currentIndex = animeNewsData.length;
+    }
+    currentIndex--;
+    upadateNewsCarrousel();
 });
-function prox() {
-    if(cont == news.length - 1)
-        cont = 0;
-    else
-        cont++;
-    modificar(cont);
-}
-function modificar(cont) {
+
+
+// Atualizar o carrousel
+const upadateNewsCarrousel = () => {
     let newMain = document.querySelector(".main-news");
 
-    newMain.querySelector("img").setAttribute('src', animeNewsData[cont].imageUrl);
-    newMain.querySelector(".category").innerText = animeNewsData[cont].category;
-    newMain.querySelector(".title").innerText = animeNewsData[cont].title;
-    newMain.querySelector(".author").innerText = "Por "+ animeNewsData[cont].author;
-    newMain.querySelector(".totalComments").innerText = animeNewsData[cont].totalComments + " Comentários";
-    newMain.querySelector('.link-post').setAttribute('href', `categoria/${animeNewsData[cont].category}/post.html?id=${animeNewsData[cont].id}`)
+    newMain.querySelector("img").setAttribute('src', animeNewsData[currentIndex].imageUrl);
+    newMain.querySelector(".category").innerText = animeNewsData[currentIndex].category;
+    newMain.querySelector(".title").innerText = animeNewsData[currentIndex].title;
+    newMain.querySelector(".author").innerText = "Por "+ animeNewsData[currentIndex].author;
+    newMain.querySelector(".totalComments").innerText = animeNewsData[currentIndex].comments.length + " Comentários";
+    newMain.querySelector('.link-post').setAttribute('href', `categoria/${animeNewsData[currentIndex].category}/post.html?id=${animeNewsData[currentIndex].id}`)
 }
+upadateNewsCarrousel();
 
-btnNext.addEventListener('click', prox);
-setInterval(prox, 7000);
+
+
+//---------------------{ Eventos }---------------------
+
+setInterval(()=>{
+    currentIndex++;
+
+    if(currentIndex == animeNewsData.length )
+        currentIndex = 0;
+    
+    upadateNewsCarrousel();
+}, 5000);
+

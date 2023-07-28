@@ -213,18 +213,20 @@ header {
 }
 
 .btn-carousel {
-    width: 20px;
+    width: 35px;
+    height: 35px;
     margin: 10px;
-    height: 80px;
+    border-radius: 50%;
     cursor: pointer;
     border: none;
-    /* display: none; */
     background-color: var(--colorThird);
     color: white;
+    z-index: 101;
+    transition: .8s;
 }
 
 .btn-carousel:hover {
-    background-color: rgba(224, 217, 217, 0.514);
+    background-color: var(--colorBgBtn) ;
 }
 
 #btn-prev,
@@ -285,7 +287,7 @@ header {
     flex: 1;
     min-width: 40%;
     color: var(--colorSecondary);
-    margin-top: 2rem;
+    margin: 2rem 0;
     position: relative;
 }
 
