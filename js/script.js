@@ -1,3 +1,5 @@
+
+
 //---------------------{ Seleção }---------------------
 const imgCarrosel = document.querySelector('.main-news')
 const btnPrev = document.querySelector("#btn-prev");
@@ -5,10 +7,22 @@ const btnNext = document.querySelector("#btn-next");
 const btnsCarousel = document.querySelectorAll('.btn-carousel');
 const newLatestContainer = document.querySelector('.content_latest_news');
 const listNewsHighlight = document.querySelector('.list-news-highlight');
+const apiUrl = 'http://localhost:8080/api/news/';
 
 let currentIndex = 0;
 
 
+const getAllNews = async () => {
+  try {
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+      return console.log(data);
+  } catch (error) {
+      console.error('Error fetching all news:', error);
+      throw error;
+  }
+}
+getAllNews();
 
 const animeNewsData = [
     {
