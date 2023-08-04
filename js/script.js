@@ -9,6 +9,9 @@ const newLatestContainer = document.querySelector('.content_latest_news');
 const listNewsHighlight = document.querySelector('.list-news-highlight');
 const apiUrl = 'http://localhost:8080/api/news/';
 
+// News
+let allNews= []; 
+
 let currentIndex = 0;
 
 
@@ -16,13 +19,22 @@ const getAllNews = async () => {
   try {
       const res = await fetch(apiUrl);
       const data = await res.json();
-      return console.log(data);
+      return data;
   } catch (error) {
       console.error('Error fetching all news:', error);
       throw error;
   }
 }
-getAllNews();
+
+allNews = getAllNews();
+
+allNews.then(data => {
+  console.log(data);
+}).catch(error => {
+  console.error('Error fetching all news:', error);
+});
+
+
 
 const animeNewsData = [
     {
@@ -30,8 +42,10 @@ const animeNewsData = [
       title: 'New Season of "My Hero Academia" Announced',
       description: 'Exciting news for fans of "My Hero Academia" as the anime series has been confirmed to get a new season. Get ready for more action and heroism!',
       category: 'Anime News',
-      author: 'AnimeFan123',
-      date: 'July 28, 2023',
+      comments_count: 10,
+      views_count: 100,
+      author: { name: 'AnimeFan2000' },
+      createdAt: 'July 28, 2023',
       imageUrl: 'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/my-hero-academia-season-7-image.jpg',
       views: 1500,
       comments: [
@@ -45,8 +59,10 @@ const animeNewsData = [
       title: 'Special Event: "Naruto" 20th Anniversary Celebration',
       description: 'Join us in celebrating the 20th anniversary of the beloved anime "Naruto"! We have exciting events, merchandise, and surprises for all Naruto fans.',
       category: 'Anime Events',
-      author: 'NarutoFan2000',
-      date: 'September 10, 2023',
+      comments_count: 10,
+      views_count: 100,
+      author: { name: 'NarutoFan2000' },
+      createdAt: 'September 10, 2023',
       imageUrl: 'https://naruto-official.com/common/ogp/NTOS_OG-20th.png',
       views: 2500,
       comments: [
@@ -60,8 +76,10 @@ const animeNewsData = [
       title: 'New Anime Film: "The Legend of The Dragon Swordsman"',
       description: 'Prepare for an epic adventure with "The Legend of The Dragon Swordsman" movie. Join the protagonist as he embarks on a quest to save the mystical land from darkness.',
       category: 'Anime Movies',
-      author: 'CineAnimeGeek',
-      date: 'November 5, 2023',
+      comments_count: 10,
+      views_count: 100,
+      author: { name: 'NarutoFan2000' },
+      createdAt: 'November 5, 2023',
       imageUrl: 'https://pic1.iqiyipic.com/image/20200928/2a/50/v_153455882_m_601_zh-CN_480_270.jpg',
       views: 1800,
       comments: [
@@ -75,8 +93,10 @@ const animeNewsData = [
       title: 'Interview with Voice Actor: Aya Suzuki (Voice of Sakura)',
       description: 'We had a chance to sit down with Aya Suzuki, the talented voice behind Sakura in "Naruto". She shares her experiences and feelings about the iconic character.',
       category: 'Interviews',
-      author: 'VoiceActorInsider',
-      date: 'December 15, 2023',
+      comments_count: 10,
+      views_count: 100,
+      author: { name: 'MusicMaestro' },
+      createdAt: 'December 15, 2023',
       imageUrl: 'https://criticalhits.com.br/wp-content/uploads/2022/02/signo-sakura-naruto.jpg',
       views: 1200,
       comments: [
@@ -90,8 +110,10 @@ const animeNewsData = [
         title: 'New Anime "Beyond the Stars" Premieres on October 1st',
         description: 'Exciting news for all anime fans! A brand new anime titled "Beyond the Stars" will make its debut on October 1st. Get ready for an intergalactic adventure!',
         category: 'Anime News',
-        author: 'AnimeEnthusiast2023',
-        date: 'September 20, 2023',
+        comments_count: 10,
+        views_count: 100,
+        author: { name: 'MusicMaestro' },
+        createdAt: 'September 20, 2023',
         imageUrl: 'https://psverso.com.br/wp-content/uploads/2023/05/Haruka-Beyond-the-Stars.jpg',
         views: 3000,
         comments: [
@@ -102,11 +124,13 @@ const animeNewsData = [
       },
       {
         id: 6,
-        title: 'AnimeCon 2024: Save the Date!',
+        title: 'AnimeCon 2024: Save the createdAt!',
         description: 'Mark your calendars for AnimeCon 2024! The biggest anime convention of the year is coming on February 15-18. Get ready for cosplays, panels, and amazing guests!',
         category: 'Anime Events',
-        author: 'AnimeConOrg',
-        date: 'October 5, 2023',
+        comments_count: 10,
+        views_count: 100,
+        author: { name: 'MusicMaestro' },
+        createdAt: 'October 5, 2023',
         imageUrl: 'https://jotaku.net/wp-content/uploads/2021/01/https___blogs-images.forbes.com_laurenorsini_files_2015_07_anime_expo.jpg',
         views: 4000,
         comments: [
@@ -120,8 +144,10 @@ const animeNewsData = [
         title: 'Top 10 Must-Watch Anime of 2023',
         description: 'Check out our list of the top 10 anime series you shouldn\'t miss in 2023. From action to romance, we\'ve got you covered with the best shows of the year!',
         category: 'Anime Recommendations',
+        comments_count: 10,
+        views_count: 100,
         author: 'AnimeFanaticsReview',
-        date: 'November 30, 2023',
+        author: { name: 'MusicMaestro' },
         imageUrl: 'https://animecorner.me/wp-content/uploads/2023/05/top-best-upcoming-summer-2023-anime-releases.png',
         views: 2800,
         comments: [
@@ -135,8 +161,10 @@ const animeNewsData = [
         title: 'Behind the Scenes: "The Making of Anime Music"',
         description: 'Discover the secrets behind creating captivating anime music. We interviewed renowned composers and explored the creative process that brings anime soundtracks to life.',
         category: 'Special Features',
-        author: 'MusicMaestro',
-        date: 'December 20, 2023',
+        comments_count: 10,
+        views_count: 100,
+        author: { name: 'MusicMaestro' },
+        createdAt: 'December 20, 2023',
         imageUrl: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/11/music-anime.jpg',
         views: 1800,
         comments: [
@@ -159,7 +187,7 @@ const toggleMouse = () =>{
     });
 };
 
-// Criar uma noticia
+// Criar uma noticia ---{Últimas notícias}---
 const createNews = (news) => {
     const divNews = document.createElement('div');
     divNews.classList.add('new');
@@ -184,7 +212,7 @@ const createNews = (news) => {
 
     const description = document.createElement('span');
     description.classList.add('preview-description');
-    description.innerText = `${news.description}`;
+    description.innerText = `${news.content}`;
     divNews.appendChild(description);
 
     const btnReadMore = document.createElement('form');
@@ -202,8 +230,8 @@ const createNews = (news) => {
     const authorNews = document.createElement('span');
     authorNews.classList.add('author');
     authorNews.innerHTML = `
-        <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt=${news.author}>
-        <span>${news.author}</span>
+        <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt=${news.author.name}>
+        <span>${news.author.name}</span>
     `;
     divInfoPost.appendChild(authorNews);
 
@@ -214,15 +242,15 @@ const createNews = (news) => {
     divStatisticPostNews.innerHTML = `
     <span class="total-comments">
         <i class="fa fa-comment" aria-hidden="true"></i>
-        <span class="value">${news.comments.length}</span>
+        <span class="value">${news.comments_count}</span>
     </span>
     <span class="total-views">
         <i class="fa fa-eye" aria-hidden="true"></i>
-        <span class="value">${news.views}</span>
+        <span class="value">${news.views_count}</span>
     </span>
     <span class="post-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        <span class="value">${news.date}</span>
+        <span class="value">${news.createdAt}</span>
     </span>
     `; 
     divInfoPost.appendChild(divStatisticPostNews);
@@ -234,10 +262,23 @@ const createNews = (news) => {
     newLatestContainer.appendChild(divNews);
 };
 
-// 
+// Preencher as ùltimas notícias
+
 animeNewsData.map((news)=>{
     createNews(news);
-})
+  });
+
+  /*
+allNews.then(data => {
+  data.map((news)=>{
+    createNews(news);
+  });
+  console.log(data);
+}).catch(error => {
+    console.error('Error fetching all news:', error);
+});
+*/
+
 
 // Criar estrutura das news highlight
 const createHighLightNews = (news) =>{
@@ -312,4 +353,6 @@ setInterval(()=>{
     
     upadateNewsCarrousel();
 }, 5000);
+
+//---------------------{ Painel Administrativo }---------------------
 
