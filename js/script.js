@@ -1,6 +1,18 @@
 
 
+
+
+
 //---------------------{ Seleção }---------------------
+const html = {
+  get(element) {
+    return document.querySelector(element);
+  },
+  getAll(element) {
+    return document.querySelectorAll(element);
+  }
+}
+
 const imgCarrosel = document.querySelector('.main-news')
 const btnPrev = document.querySelector("#btn-prev");
 const btnNext = document.querySelector("#btn-next");
@@ -15,24 +27,25 @@ let allNews= [];
 let currentIndex = 0;
 
 
-const getAllNews = async () => {
-  try {
-      const res = await fetch(apiUrl);
-      const data = await res.json();
-      return data;
-  } catch (error) {
-      console.error('Error fetching all news:', error);
-      throw error;
+
+const getNews = {
+  async getAllNews() {
+   
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        console.log(data);
+        return data;
+    
   }
 }
 
-allNews = getAllNews();
+// allNews = getAllNews();
 
-allNews.then(data => {
-  console.log(data);
-}).catch(error => {
-  console.error('Error fetching all news:', error);
-});
+// allNews.then(data => {
+//   console.log(data);
+// }).catch(error => {
+//   console.error('Error fetching all news:', error);
+// });
 
 
 
@@ -40,7 +53,7 @@ const animeNewsData = [
     {
       id: 1,
       title: 'New Season of "My Hero Academia" Announced',
-      description: 'Exciting news for fans of "My Hero Academia" as the anime series has been confirmed to get a new season. Get ready for more action and heroism!',
+      content: 'Exciting news for fans of "My Hero Academia" as the anime series has been confirmed to get a new season. Get ready for more action and heroism!',
       category: 'Anime News',
       comments_count: 10,
       views_count: 100,
@@ -57,7 +70,7 @@ const animeNewsData = [
     {
       id: 2,
       title: 'Special Event: "Naruto" 20th Anniversary Celebration',
-      description: 'Join us in celebrating the 20th anniversary of the beloved anime "Naruto"! We have exciting events, merchandise, and surprises for all Naruto fans.',
+      content: 'Join us in celebrating the 20th anniversary of the beloved anime "Naruto"! We have exciting events, merchandise, and surprises for all Naruto fans.',
       category: 'Anime Events',
       comments_count: 10,
       views_count: 100,
@@ -74,7 +87,7 @@ const animeNewsData = [
     {
       id: 3,
       title: 'New Anime Film: "The Legend of The Dragon Swordsman"',
-      description: 'Prepare for an epic adventure with "The Legend of The Dragon Swordsman" movie. Join the protagonist as he embarks on a quest to save the mystical land from darkness.',
+      content: 'Prepare for an epic adventure with "The Legend of The Dragon Swordsman" movie. Join the protagonist as he embarks on a quest to save the mystical land from darkness.',
       category: 'Anime Movies',
       comments_count: 10,
       views_count: 100,
@@ -91,8 +104,8 @@ const animeNewsData = [
     {
       id: 4,
       title: 'Interview with Voice Actor: Aya Suzuki (Voice of Sakura)',
-      description: 'We had a chance to sit down with Aya Suzuki, the talented voice behind Sakura in "Naruto". She shares her experiences and feelings about the iconic character.',
-      category: 'Interviews',
+      content: 'We had a chance to sit down with Aya Suzuki, the talented voice behind Sakura in "Naruto". She shares her experiences and feelings about the iconic character.',
+      category: 'Anime Interviews',
       comments_count: 10,
       views_count: 100,
       author: { name: 'MusicMaestro' },
@@ -108,7 +121,7 @@ const animeNewsData = [
     {
         id: 5,
         title: 'New Anime "Beyond the Stars" Premieres on October 1st',
-        description: 'Exciting news for all anime fans! A brand new anime titled "Beyond the Stars" will make its debut on October 1st. Get ready for an intergalactic adventure!',
+        content: 'Exciting news for all anime fans! A brand new anime titled "Beyond the Stars" will make its debut on October 1st. Get ready for an intergalactic adventure!',
         category: 'Anime News',
         comments_count: 10,
         views_count: 100,
@@ -125,7 +138,7 @@ const animeNewsData = [
       {
         id: 6,
         title: 'AnimeCon 2024: Save the createdAt!',
-        description: 'Mark your calendars for AnimeCon 2024! The biggest anime convention of the year is coming on February 15-18. Get ready for cosplays, panels, and amazing guests!',
+        content: 'Mark your calendars for AnimeCon 2024! The biggest anime convention of the year is coming on February 15-18. Get ready for cosplays, panels, and amazing guests!',
         category: 'Anime Events',
         comments_count: 10,
         views_count: 100,
@@ -142,7 +155,7 @@ const animeNewsData = [
       {
         id: 7,
         title: 'Top 10 Must-Watch Anime of 2023',
-        description: 'Check out our list of the top 10 anime series you shouldn\'t miss in 2023. From action to romance, we\'ve got you covered with the best shows of the year!',
+        content: 'Check out our list of the top 10 anime series you shouldn\'t miss in 2023. From action to romance, we\'ve got you covered with the best shows of the year!',
         category: 'Anime Recommendations',
         comments_count: 10,
         views_count: 100,
@@ -159,7 +172,7 @@ const animeNewsData = [
       {
         id: 8,
         title: 'Behind the Scenes: "The Making of Anime Music"',
-        description: 'Discover the secrets behind creating captivating anime music. We interviewed renowned composers and explored the creative process that brings anime soundtracks to life.',
+        content: 'Discover the secrets behind creating captivating anime music. We interviewed renowned composers and explored the creative process that brings anime soundtracks to life.',
         category: 'Special Features',
         comments_count: 10,
         views_count: 100,
@@ -177,9 +190,6 @@ const animeNewsData = [
   
   
 
-
-
-
 //---------------------{ Funções }---------------------
 const toggleMouse = () =>{
     btnsCarousel.forEach((el)=>{
@@ -187,11 +197,29 @@ const toggleMouse = () =>{
     });
 };
 
+
+function addReadMoreClickEvent(button) {
+  console.log('oi');
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const postId = button.parentNode.parentNode.getAttribute('key');
+    console.log(postId);
+    if (postId == null) {
+      console.log('Página não encontrada');
+      return;
+    }
+    pagePost.navigateToNewsPage(postId);
+  });
+}
+
 // Criar uma noticia ---{Últimas notícias}---
 const createNews = (news) => {
     const divNews = document.createElement('div');
     divNews.classList.add('new');
+
     divNews.classList.add('info_latest_news');
+    divNews.setAttribute('key', news.id);
 
     const categoryNews = document.createElement('span');
     categoryNews.classList.add('category');
@@ -217,11 +245,15 @@ const createNews = (news) => {
 
     const btnReadMore = document.createElement('form');
     btnReadMore.innerHTML = `
-        <button type="submit" class="btn-read-more news-btn">
-        Ler mais
-        </button>
+    
+      <button type="submit" class="btn-read-more">
+          Ler mais
+      </button>
+ 
     `;
-    divNews.appendChild(btnReadMore)
+    divNews.appendChild(btnReadMore);
+
+    addReadMoreClickEvent(btnReadMore.querySelector('.btn-read-more'));
     
     const divInfoPost = document.createElement('div');
     divInfoPost.classList.add('infos-post');
@@ -255,29 +287,10 @@ const createNews = (news) => {
     `; 
     divInfoPost.appendChild(divStatisticPostNews);
     
-   
-    
-   
+
     divNews.appendChild(divInfoPost);
     newLatestContainer.appendChild(divNews);
 };
-
-// Preencher as ùltimas notícias
-
-// animeNewsData.map((news)=>{
-//     createNews(news);
-//   });
-
-  /*
-allNews.then(data => {
-  data.map((news)=>{
-    createNews(news);
-  });
-  console.log(data);
-}).catch(error => {
-    console.error('Error fetching all news:', error);
-});
-*/
 
 // Criar estrutura das news highlight
 const createHighLightNews = (news) =>{
@@ -291,16 +304,18 @@ const createHighLightNews = (news) =>{
 
     const formNews = document.createElement('form');
     formNews.innerHTML = `
-    <form>
+   
         <button type="submit" class="btn-read-more">
             Ler mais
         </button>
-    </form>
+ 
     `
     divNewsHighligh.appendChild(formNews);
+    addReadMoreClickEvent(formNews.querySelector('.btn-read-more'));
 
     listNewsHighlight.appendChild(divNewsHighligh);
 }
+
 animeNewsData.map((news)=>{
     createHighLightNews(news);
 })
@@ -324,7 +339,6 @@ btnPrev.addEventListener('click', ()=>{
     upadateNewsCarrousel();
 });
 
-
 // Atualizar o carrousel
 const upadateNewsCarrousel = () => {
     let newMain = document.querySelector(".main-news");
@@ -339,7 +353,6 @@ const upadateNewsCarrousel = () => {
 upadateNewsCarrousel();
 
 //---------------------{ Eventos }---------------------
-
 setInterval(()=>{
     currentIndex++;
 
@@ -350,6 +363,15 @@ setInterval(()=>{
 }, 5000);
 
 
+
+// -------------------------{Post ùnico}-------------------------
+const pagePost = {
+  navigateToNewsPage(postId) {
+    const newsUrl = `post.html?id=${postId}`;
+    window.location.href = newsUrl;
+  }
+};
+
 //---------------------{ Paginação }---------------------
 let perPage = 10;
 const state = {
@@ -357,12 +379,6 @@ const state = {
     perPage,
     totalPage: Math.ceil(animeNewsData.length / perPage),
     maxVisibleButtons: 5
-}
-
-const html = {
-  get(element) {
-    return document.querySelector(element);
-  }
 }
 
 const controls = {
@@ -468,14 +484,15 @@ const list = {
   create(item) {
     createNews(item);
   },
-  update() {
+  async update() {
     html.get('.content_latest_news').innerHTML = '';
 
     let page = state.page - 1;
     let start = page * state.perPage;
     let end = start + state.perPage;
 
-    const paginatedItems = animeNewsData.slice(start, end);
+    const data = await getNews.getAllNews();
+    const paginatedItems = data.slice(start, end);
     console.log(paginatedItems);
     
     paginatedItems.forEach(list.create);

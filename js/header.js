@@ -70,11 +70,8 @@ iconsSocial.forEach((icon) => {
 
 container.appendChild(containerListIcons);
 
-  header.appendChild(container);
-
-
-
-  conteinerHeader.appendChild(header);
+header.appendChild(container);
+conteinerHeader.appendChild(header);
 }
 
 createHeader();
