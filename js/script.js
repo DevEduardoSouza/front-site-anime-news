@@ -260,10 +260,10 @@ const createNews = (news) => {
 
     
     const authorNews = document.createElement('span');
-    authorNews.classList.add('author');
+    authorNews.classList.add('author-post');
     authorNews.innerHTML = `
-        <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt=${news.author.name}>
-        <span>${news.author.name}</span>
+        <img class="author-photo" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt=${news.author.name}>
+        <span class="author-name">${news.author.name}</span>
     `;
     divInfoPost.appendChild(authorNews);
 

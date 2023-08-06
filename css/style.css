@@ -7,6 +7,11 @@
     --colorBgBtn: #fd973d;
     --fontMain: 'Inter', sans-serif;
     --fontSecondary: 'Lexend Deca', sans-serif;
+
+    --color-main: #202024;
+    --color-bg: #16161a;
+    --title-color: ##f8f8fb;
+    --title-hover-color: #fd973d;
 }
 
 * {
@@ -35,6 +40,7 @@ header {
     align-items: center;
     height: 70px;
     border-bottom: 1px solid #343434;
+    background-color: var(--color-main);
 }
 
 .conteiner {
@@ -198,7 +204,7 @@ header {
     background: linear-gradient(rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.95));
 }
 
-.new .category {
+.category {
     display: inline-block;
     font-size: 13px;
     padding: 3px;
@@ -320,17 +326,17 @@ header {
     margin-bottom: 1rem;
     word-wrap: break-word;
 }
-.info_latest_news .infos-post {
+ .infos-post {
     display: flex;
     justify-content: space-between;
     font-size: .7rem;   
 }
-.info_latest_news .author {
+.author-post {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.info_latest_news .author img {
+.author-post .author-photo {
     width: 25px;
 }
 

@@ -1,0 +1,120 @@
+
+
+:root{
+  --color-main: #202024;
+  --color-bg: #16161a;
+  --title-color: #f8f8fb;
+  --title-hover-color: #fd973d;
+  --bd-radius: .5rem;
+}
+
+body{
+  background-color: var(--color-bg) !important;
+}
+
+.container{
+  display: flex;
+  margin: auto;
+  max-width: 1100px;
+  width: 90%;
+}
+
+
+/* Container Post */
+
+.container-post{
+  /* background-color: var(--color-main); */
+  border: 1px solid red;
+  height: auto;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.container-post .content-post{
+  background-color: var(--color-main);
+  color: var(--title-color);
+  border-radius: var(--bd-radius);
+  flex: 2;
+  padding: 1rem;
+}
+.container-post .content-post h2{
+    font-family: 3rem;
+}
+.container-post .content-post .infos-post{
+  margin: 1rem 0;
+}
+.container-post .content-post .container-img{
+  width: 100%;
+  max-height: 400px; 
+  margin: .5rem 0;
+  overflow: hidden; 
+}
+.container-post .content-post .container-img
+img{
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+.container-post .content-post  .category-post{
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.container-post .content-post .article-body {
+  line-height: 1.6;
+  color: var(--title-color);
+}
+
+/* Estilos para cada seção do artigo */
+.section {
+  margin-bottom: 3rem;
+}
+
+/* Estilos para o título de cada seção */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--title-hover-color);
+  margin-bottom: 10px;
+}
+
+/* Estilos para o conteúdo de cada seção */
+.section-content {
+  font-size: 1rem;
+}
+
+
+/* Estilos para os parágrafos dentro das seções */
+.section-content p {
+  margin-bottom: 20px;
+}
+
+/* Estilos para a lista dentro da seção "Lista de Benefícios" */
+.section-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Estilos para os itens da lista */
+.section-content li {
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Estilos para os ícones de lista */
+.section-content li:before {
+  content: "\2022"; /* Código do caractere do bullet */
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: var(--title-hover-color);
+  font-size: 20px;
+}
+
+
+/*  */
+.container-post .sidebar-post{
+  background-color: aliceblue;
+  flex: 1;
+}
+
