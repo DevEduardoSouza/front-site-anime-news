@@ -44,7 +44,7 @@ const createHeader = () =>{
   formSearch.innerHTML = `
   <input type="search" id="search" name="search" placeholder="Buscar" autocomplete="off">
   <button type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="bi bi-search"></i>
   </button>
   `
   divSearch.appendChild(formSearch);
