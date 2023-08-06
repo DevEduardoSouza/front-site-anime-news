@@ -3,6 +3,7 @@
 :root{
   --color-main: #202024;
   --color-bg: #16161a;
+  --color-br: #555;
   --title-color: #f8f8fb;
   --title-hover-color: #fd973d;
   --bd-radius: .5rem;
@@ -19,6 +20,15 @@ body{
   width: 90%;
 }
 
+a{
+  text-decoration: none;
+  color: var(--title-color);
+}
+
+img:hover{
+  /* filter: brightness(100%) !important; */
+  filter: none;
+}
 
 /* Container Post */
 
@@ -59,49 +69,33 @@ img{
   margin-top: 1rem;
   margin-bottom: 0;
 }
-
 .container-post .content-post .article-body {
   line-height: 1.6;
   color: var(--title-color);
 }
-
-/* Estilos para cada seção do artigo */
 .section {
   margin-bottom: 3rem;
 }
-
-/* Estilos para o título de cada seção */
 .section-title {
   font-size: 24px;
   font-weight: bold;
   color: var(--title-hover-color);
   margin-bottom: 10px;
 }
-
-/* Estilos para o conteúdo de cada seção */
 .section-content {
   font-size: 1rem;
 }
-
-
-/* Estilos para os parágrafos dentro das seções */
 .section-content p {
   margin-bottom: 20px;
 }
-
-/* Estilos para a lista dentro da seção "Lista de Benefícios" */
 .section-content ul {
   list-style: none;
   padding-left: 0;
 }
-
-/* Estilos para os itens da lista */
 .section-content li {
   position: relative;
   padding-left: 25px;
 }
-
-/* Estilos para os ícones de lista */
 .section-content li:before {
   content: "\2022"; /* Código do caractere do bullet */
   position: absolute;
@@ -110,7 +104,129 @@ img{
   color: var(--title-hover-color);
   font-size: 20px;
 }
+.social-share {
+  margin-top: 3rem;
+  background-color:  rgba(255,255,255,0.03);
+  border-radius: var(--bd-radius);
+  padding: 1rem;
+  position: relative;
+}
+.social-share h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.social-icons {
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.social-icons li i{
+  color: var(--title-hover-color);
+  opacity: .8;
+}
+.social-icons li i:hover{
+  opacity: 1;
+}
+.like-button {
+  margin-top: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1rem;
+}
+.like-btn {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: .8;
+}
+.like-btn:hover{
+  opacity: 1;
+}
+.like-count {
+  margin-left: 10px;
+  color: #555;
+}
+/*  */
+.author{
+  border-top: 1px solid var(--color-br);
+  border-bottom: 1px solid var(--color-br);
+  margin: 2rem 0;
+  padding: 2rem 0;
+  /* background-color: ; */
+  width: 100%;
+  height: auto;
 
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-author-photo{
+  background-color: #555;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.info-author{
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.info-author .info-author-name:hover{
+  color: var(--title-hover-color);
+}
+.info-author .info-author-description{
+    color: #999898;
+    line-height: 1.5rem;
+}
+
+/*  */
+.container-suggested {
+  width: 100%;
+  overflow: hidden;
+}
+
+.content-suggested {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.content-suggested .post-suggested {
+  position: relative;
+  flex-basis: calc(33.33% - 1rem);
+  flex-grow: 1; /* Para preencher o espaço disponível */
+}
+
+.container-img-suggested {
+  height: 125px;
+}
+.title-suggested{
+  display: block;
+  font-size: .9rem;
+  margin-top: .5rem ;
+}
+
+.content-suggested .post-suggested img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-suggested .post-suggested .category-suggested {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 /*  */
 .container-post .sidebar-post{
