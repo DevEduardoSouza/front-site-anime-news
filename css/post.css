@@ -1,12 +1,14 @@
 
-
+*{
+  box-sizing: border-box;
+}
 :root{
   --color-main: #202024;
   --color-bg: #16161a;
   --color-br: #555;
   --title-color: #f8f8fb;
   --title-hover-color: #fd973d;
-  --bd-radius: .5rem;
+  --bd-radius: .2rem;
 }
 
 body{
@@ -28,6 +30,10 @@ a{
 img:hover{
   /* filter: brightness(100%) !important; */
   filter: none;
+}
+
+h2, span{
+  color: var(--title-color);
 }
 
 /* Container Post */
@@ -230,7 +236,126 @@ img{
 
 /*  */
 .container-post .sidebar-post{
-  background-color: aliceblue;
+  border: 1px solid red;
   flex: 1;
+  padding: .5rem;
+  border-radius: var(--bd-radius);
+}
+.container-post .sidebar-post h2{
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
+.container-post .sidebar-post .container-social-networks{
+  background-color: var(--color-main);
+  width: 100%;
+  /* height: 50px; */
+  padding: 1rem .5rem;
+  
+}
+.container-post .sidebar-post .container-social-networks
+h2{
+  color: var(--title-color);
+}
+.container-post .sidebar-post .container-social-networks 
+ul{
+  margin-top: 1rem;
+  /* background-color: #fd973d; */
+  display: flex; 
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.container-post .sidebar-post .container-social-networks 
+ul li{
+  /* flex: 1; */
+  width: 48%;
+  padding: .5rem .5rem;
+  cursor: pointer;
+  border-radius: .2rem;
+}
+.container-post .sidebar-post .container-social-networks 
+ul li:hover{
+  opacity: .9;
+}
+.container-post .sidebar-post .container-social-networks 
+ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-facebook{
+  background-color: #3b5999;
+}
+.social-instagram{
+  background-image: linear-gradient(15deg,#ffb13d,#dd277b,#4d5ed4);
+}
+.social-twitter{
+  background-color: #00acee;
+}
+.social-tiktok{
+  background-color: #16161a;
+}
+
+/*  */
+.container-most-popular-post{
+  width: 100%;
+  border: 1px solid red;
+  margin: 2rem 0;
+  background-color: var(--color-main);
+  border-radius: var(--bd-radius);
+  padding: .5rem;
+  height: auto;
+}
+.container-most-popular-post h2{
+  margin-bottom: 1rem;
+}
+
+.box-post-full{
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.5rem;
+  /* height: 175px; */
+}
+.box-post-full img{
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+.contente-popular-post{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.box-post-full span{
+  background: linear-gradient(rgba(17, 17, 17, 0.01), rgb(0, 0, 0));
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: .5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  
+}
+
+.box-post{
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 2rem;
+}
+.box-post img{
+  width: 40%;
+  height: 80px;
+  object-fit: cover;
+}
+.box-post span{
+  font-size: .8rem;
+  line-height: 1.1rem;
+}
+
+/*  */
+@media (max-width: 950px){
+  .container-post .sidebar-post .container-social-networks 
+  ul li{
+    width: 100%;
+  }
+}
