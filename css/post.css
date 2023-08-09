@@ -351,6 +351,41 @@ ul li a{
   font-size: .8rem;
   line-height: 1.1rem;
 }
+/*  */
+
+/*  */
+.send-email{
+  border: 1px solid red;
+  background-color: var(--color-main);
+  padding: .5rem;
+}
+.send-email span{
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.send-email form {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.send-email form input{
+  padding: .7rem .5rem;
+}
+.send-email form input{
+  background-color: #39393a;
+  border: none;
+  color: var(--title-color);
+}
+.send-email form input[type="submit"]{
+  background-color: var(--title-hover-color);
+  cursor: pointer;
+}
+.send-email form input[type="submit"]:hover{
+  opacity: .9;
+}
+
+
 
 /*  */
 @media (max-width: 950px){
