@@ -353,6 +353,80 @@ ul li a{
 }
 
 /*  */
+.list-categories{
+  border: 1px solid red;
+  background-color: var(--color-main);
+  padding: .5rem;
+  margin-bottom: 2rem;
+}
+.list-categories h2{
+  margin-bottom: .8rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--color-br) ;
+}
+.list-categories ul{
+  display: flex;
+  flex-direction: column;
+}
+.list-categories ul li a{
+  display: flex;
+  justify-content: space-between;
+}
+.list-categories ul li a span{
+  padding: .5rem 0;
+}
+.list-categories ul li a span:hover{
+  color: var(--title-hover-color);
+}
+
+
+/*  */
+
+.send-email{
+  border: 1px solid red;
+  background-color: var(--color-main);
+  padding: .5rem;
+}
+.send-email span{
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.send-email form {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.send-email form input{
+  padding: .7rem .5rem;
+}
+.send-email form input{
+  background-color: #39393a;
+  border: none;
+  color: var(--title-color);
+}
+.send-email form input[type="submit"]{
+  background-color: var(--title-hover-color);
+  cursor: pointer;
+}
+.send-email form input[type="submit"]:hover{
+  opacity: .9;
+}
+
+/*  */
+.container-most-recent-post{
+  border: 1px solid red;
+  background-color: var(--color-main);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-br) ;
+  padding: .5rem;
+}
+.container-most-recent-post h2{
+  margin-bottom: 1rem;
+}
+
+
+/*  */
 @media (max-width: 950px){
   .container-post .sidebar-post .container-social-networks 
   ul li{
