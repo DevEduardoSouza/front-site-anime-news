@@ -381,6 +381,7 @@ ul li a{
 
 
 /*  */
+
 .send-email{
   border: 1px solid red;
   background-color: var(--color-main);
@@ -412,6 +413,17 @@ ul li a{
   opacity: .9;
 }
 
+/*  */
+.container-most-recent-post{
+  border: 1px solid red;
+  background-color: var(--color-main);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-br) ;
+  padding: .5rem;
+}
+.container-most-recent-post h2{
+  margin-bottom: 1rem;
+}
 
 
 /*  */
