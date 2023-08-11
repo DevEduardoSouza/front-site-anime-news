@@ -73,5 +73,4 @@ container.appendChild(containerListIcons);
 header.appendChild(container);
 conteinerHeader.appendChild(header);
 }
-
 createHeader();

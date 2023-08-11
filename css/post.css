@@ -425,6 +425,13 @@ ul li a{
   margin-bottom: 1rem;
 }
 
+/* footer */
+.container-footer footer{
+  background-color: #dd277b;
+  height: 150px;
+  margin-top: 2rem;
+}
+
 
 /*  */
 @media (max-width: 950px){
