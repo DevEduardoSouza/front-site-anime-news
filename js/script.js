@@ -491,7 +491,7 @@ const list = {
     let start = page * state.perPage;
     let end = start + state.perPage;
 
-    const data = await getNews.getAllNews();
+    const data = /* await getNews.getAllNews()*/ animeNewsData;
     const paginatedItems = data.slice(start, end);
     console.log(paginatedItems);
     
